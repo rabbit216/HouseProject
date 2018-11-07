@@ -1,84 +1,83 @@
 package com.lwj.house;
 
 public class HouseProject {
-    String projectname;
-    String Building;
-    String room;
-    String Planning;
-    String Features;
-    String Housetype;
-    String floor;
-    String Layerheight;
-    String Oriented;
-    String structure;
-    String PublicBuilding;
-    String Relocation;
-    String Selfuse;
-    String Approvedsales;
-    String housesalespricelist;
-    String Closedbalcony;
-    String NoClosedbalcony;
-    String kitchen;
-    String bathroom;
-    String Forecastarea;
-    String Measuredarea;
-    String Predictioninsidearea;
-    String Measuredinsidearea;
-    String Forecastpoolarea;
-    String Measuredpoolarea;
-    String mortgage;
-    String Seal;
-    String Tips;
+    private String projectName;
+    private String building;
+    private String room;
+    private String planning;
+    private String features;
+    private String houseType;
+    private String floor;
+    private String layerHeight;
+    private String oriented;
+    private String structure;
+    private String publicBuilding;
+    private String relocation;
+    private String selfuse;
+    private String approvedSales;
+    private String houseSalespricelist;
+    private String closedBalcony;
+    private String noClosedBalcony;
+    private String kitchen;
+    private String bathroom;
+    private String forecastArea;
+    private String measuredArea;
+    private String predictionInsideArea;
+    private String measuredInsideArea;
+    private String forecastPoolArea;
+    private String measuredPoolArea;
+    private String mortgage;
+    private String seal;
+    private String tips;
 
     public HouseProject(String projectname, String building, String room, String planning, String features, String housetype, String floor, String layerheight, String oriented, String structure, String publicBuilding, String relocation, String selfuse, String approvedsales, String housesalespricelist, String closedbalcony, String noClosedbalcony, String kitchen, String bathroom, String forecastarea, String measuredarea, String predictioninsidearea, String measuredinsidearea, String forecastpoolarea, String measuredpoolarea, String mortgage, String seal, String tips) {
-        this.projectname = projectname;
-        Building = building;
+        this.projectName = projectname;
+        this.building = building;
         this.room = room;
-        Planning = planning;
-        Features = features;
-        Housetype = housetype;
+        this.planning = planning;
+        this.features = features;
+        houseType = housetype;
         this.floor = floor;
-        Layerheight = layerheight;
-        Oriented = oriented;
+        layerHeight = layerheight;
+        this.oriented = oriented;
         this.structure = structure;
-        PublicBuilding = publicBuilding;
-        Relocation = relocation;
-        Selfuse = selfuse;
-        Approvedsales = approvedsales;
-        this.housesalespricelist = housesalespricelist;
-        Closedbalcony = closedbalcony;
-        NoClosedbalcony = noClosedbalcony;
+        this.publicBuilding = publicBuilding;
+        this.relocation = relocation;
+        this.selfuse = selfuse;
+        approvedSales = approvedsales;
+        houseSalespricelist = housesalespricelist;
+        closedBalcony = closedbalcony;
+        noClosedBalcony = noClosedbalcony;
         this.kitchen = kitchen;
         this.bathroom = bathroom;
-        Forecastarea = forecastarea;
-        Measuredarea = measuredarea;
-        Predictioninsidearea = predictioninsidearea;
-        Measuredinsidearea = measuredinsidearea;
-        Forecastpoolarea = forecastpoolarea;
-        Measuredpoolarea = measuredpoolarea;
+        forecastArea = forecastarea;
+        measuredArea = measuredarea;
+        predictionInsideArea = predictioninsidearea;
+        measuredInsideArea = measuredinsidearea;
+        forecastPoolArea = forecastpoolarea;
+        measuredPoolArea = measuredpoolarea;
         this.mortgage = mortgage;
-        Seal = seal;
-        Tips = tips;
+        this.seal = seal;
+        this.tips = tips;
     }
 
     public HouseProject() {
-
     }
 
-    public String getProjectname() {
-        return projectname;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setProjectname(String projectname) {
-        this.projectname = projectname;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public String getBuilding() {
-        return Building;
+        return building;
     }
 
     public void setBuilding(String building) {
-        Building = building;
+        this.building = building;
     }
 
     public String getRoom() {
@@ -90,27 +89,27 @@ public class HouseProject {
     }
 
     public String getPlanning() {
-        return Planning;
+        return planning;
     }
 
     public void setPlanning(String planning) {
-        Planning = planning;
+        this.planning = planning;
     }
 
     public String getFeatures() {
-        return Features;
+        return features;
     }
 
     public void setFeatures(String features) {
-        Features = features;
+        this.features = features;
     }
 
-    public String getHousetype() {
-        return Housetype;
+    public String getHouseType() {
+        return houseType;
     }
 
-    public void setHousetype(String housetype) {
-        Housetype = housetype;
+    public void setHouseType(String houseType) {
+        this.houseType = houseType;
     }
 
     public String getFloor() {
@@ -121,20 +120,20 @@ public class HouseProject {
         this.floor = floor;
     }
 
-    public String getLayerheight() {
-        return Layerheight;
+    public String getLayerHeight() {
+        return layerHeight;
     }
 
-    public void setLayerheight(String layerheight) {
-        Layerheight = layerheight;
+    public void setLayerHeight(String layerHeight) {
+        this.layerHeight = layerHeight;
     }
 
     public String getOriented() {
-        return Oriented;
+        return oriented;
     }
 
     public void setOriented(String oriented) {
-        Oriented = oriented;
+        this.oriented = oriented;
     }
 
     public String getStructure() {
@@ -145,60 +144,60 @@ public class HouseProject {
         this.structure = structure;
     }
 
-    public String isPublicBuilding() {
-        return PublicBuilding;
+    public String getPublicBuilding() {
+        return publicBuilding;
     }
 
     public void setPublicBuilding(String publicBuilding) {
-        PublicBuilding = publicBuilding;
+        this.publicBuilding = publicBuilding;
     }
 
-    public String isRelocation() {
-        return Relocation;
+    public String getRelocation() {
+        return relocation;
     }
 
     public void setRelocation(String relocation) {
-        Relocation = relocation;
+        this.relocation = relocation;
     }
 
-    public String isSelfuse() {
-        return Selfuse;
+    public String getSelfuse() {
+        return selfuse;
     }
 
     public void setSelfuse(String selfuse) {
-        Selfuse = selfuse;
+        this.selfuse = selfuse;
     }
 
-    public String isApprovedsales() {
-        return Approvedsales;
+    public String getApprovedSales() {
+        return approvedSales;
     }
 
-    public void setApprovedsales(String approvedsales) {
-        Approvedsales = approvedsales;
+    public void setApprovedSales(String approvedSales) {
+        this.approvedSales = approvedSales;
     }
 
-    public String getHousesalespricelist() {
-        return housesalespricelist;
+    public String getHouseSalespricelist() {
+        return houseSalespricelist;
     }
 
-    public void setHousesalespricelist(String housesalespricelist) {
-        this.housesalespricelist = housesalespricelist;
+    public void setHouseSalespricelist(String houseSalespricelist) {
+        this.houseSalespricelist = houseSalespricelist;
     }
 
-    public String getClosedbalcony() {
-        return Closedbalcony;
+    public String getClosedBalcony() {
+        return closedBalcony;
     }
 
-    public void setClosedbalcony(String closedbalcony) {
-        Closedbalcony = closedbalcony;
+    public void setClosedBalcony(String closedBalcony) {
+        this.closedBalcony = closedBalcony;
     }
 
-    public String getNoClosedbalcony() {
-        return NoClosedbalcony;
+    public String getNoClosedBalcony() {
+        return noClosedBalcony;
     }
 
-    public void setNoClosedbalcony(String noClosedbalcony) {
-        NoClosedbalcony = noClosedbalcony;
+    public void setNoClosedBalcony(String noClosedBalcony) {
+        this.noClosedBalcony = noClosedBalcony;
     }
 
     public String getKitchen() {
@@ -217,55 +216,55 @@ public class HouseProject {
         this.bathroom = bathroom;
     }
 
-    public String getForecastarea() {
-        return Forecastarea;
+    public String getForecastArea() {
+        return forecastArea;
     }
 
-    public void setForecastarea(String forecastarea) {
-        Forecastarea = forecastarea;
+    public void setForecastArea(String forecastArea) {
+        this.forecastArea = forecastArea;
     }
 
-    public String getMeasuredarea() {
-        return Measuredarea;
+    public String getMeasuredArea() {
+        return measuredArea;
     }
 
-    public void setMeasuredarea(String measuredarea) {
-        Measuredarea = measuredarea;
+    public void setMeasuredArea(String measuredArea) {
+        this.measuredArea = measuredArea;
     }
 
-    public String getPredictioninsidearea() {
-        return Predictioninsidearea;
+    public String getPredictionInsideArea() {
+        return predictionInsideArea;
     }
 
-    public void setPredictioninsidearea(String predictioninsidearea) {
-        Predictioninsidearea = predictioninsidearea;
+    public void setPredictionInsideArea(String predictionInsideArea) {
+        this.predictionInsideArea = predictionInsideArea;
     }
 
-    public String getMeasuredinsidearea() {
-        return Measuredinsidearea;
+    public String getMeasuredInsideArea() {
+        return measuredInsideArea;
     }
 
-    public void setMeasuredinsidearea(String measuredinsidearea) {
-        Measuredinsidearea = measuredinsidearea;
+    public void setMeasuredInsideArea(String measuredInsideArea) {
+        this.measuredInsideArea = measuredInsideArea;
     }
 
-    public String getForecastpoolarea() {
-        return Forecastpoolarea;
+    public String getForecastPoolArea() {
+        return forecastPoolArea;
     }
 
-    public void setForecastpoolarea(String forecastpoolarea) {
-        Forecastpoolarea = forecastpoolarea;
+    public void setForecastPoolArea(String forecastPoolArea) {
+        this.forecastPoolArea = forecastPoolArea;
     }
 
-    public String getMeasuredpoolarea() {
-        return Measuredpoolarea;
+    public String getMeasuredPoolArea() {
+        return measuredPoolArea;
     }
 
-    public void setMeasuredpoolarea(String measuredpoolarea) {
-        Measuredpoolarea = measuredpoolarea;
+    public void setMeasuredPoolArea(String measuredPoolArea) {
+        this.measuredPoolArea = measuredPoolArea;
     }
 
-    public String isMortgage() {
+    public String getMortgage() {
         return mortgage;
     }
 
@@ -273,53 +272,56 @@ public class HouseProject {
         this.mortgage = mortgage;
     }
 
-    public String isSeal() {
-        return Seal;
+    public String getSeal() {
+        return seal;
     }
 
     public void setSeal(String seal) {
-        Seal = seal;
+        this.seal = seal;
     }
 
     public String getTips() {
-        return Tips;
+        return tips;
     }
 
     public void setTips(String tips) {
-        Tips = tips;
+        this.tips = tips;
     }
+
 
     @Override
     public String toString() {
         return "HouseProject{" +
-                "projectname='" + projectname + '\'' +
-                ", Building='" + Building + '\'' +
+                "projectName='" + projectName + '\'' +
+                ", Building='" + building + '\'' +
                 ", room='" + room + '\'' +
-                ", Planning='" + Planning + '\'' +
-                ", Features='" + Features + '\'' +
-                ", Housetype='" + Housetype + '\'' +
+                ", Planning='" + planning + '\'' +
+                ", Features='" + features + '\'' +
+                ", Housetype='" + houseType + '\'' +
                 ", floor=" + floor +
-                ", Layerheight='" + Layerheight + '\'' +
-                ", Oriented='" + Oriented + '\'' +
+                ", Layerheight='" + layerHeight + '\'' +
+                ", Oriented='" + oriented + '\'' +
                 ", structure='" + structure + '\'' +
-                ", PublicBuilding=" + PublicBuilding +
-                ", Relocation=" + Relocation +
-                ", Selfuse=" + Selfuse +
-                ", Approvedsales=" + Approvedsales +
-                ", housesalespricelist='" + housesalespricelist + '\'' +
-                ", Closedbalcony=" + Closedbalcony +
-                ", NoClosedbalcony=" + NoClosedbalcony +
+                ", PublicBuilding=" + publicBuilding +
+                ", Relocation=" + relocation +
+                ", Selfuse=" + selfuse +
+                ", Approvedsales=" + approvedSales +
+                ", housesalespricelist='" + houseSalespricelist + '\'' +
+                ", Closedbalcony=" + closedBalcony +
+                ", NoClosedbalcony=" + noClosedBalcony +
                 ", kitchen=" + kitchen +
                 ", bathroom=" + bathroom +
-                ", Forecastarea=" + Forecastarea +
-                ", Measuredarea=" + Measuredarea +
-                ", Predictioninsidearea=" + Predictioninsidearea +
-                ", Measuredinsidearea=" + Measuredinsidearea +
-                ", Forecastpoolarea=" + Forecastpoolarea +
-                ", Measuredpoolarea=" + Measuredpoolarea +
+                ", Forecastarea=" + forecastArea +
+                ", Measuredarea=" + measuredArea +
+                ", Predictioninsidearea=" + predictionInsideArea +
+                ", Measuredinsidearea=" + measuredInsideArea +
+                ", Forecastpoolarea=" + forecastPoolArea +
+                ", Measuredpoolarea=" + measuredPoolArea +
                 ", mortgage=" + mortgage +
-                ", Seal=" + Seal +
-                ", Tips='" + Tips + '\'' +
+                ", Seal=" + seal +
+                ", Tips='" + tips + '\'' +
                 '}';
     }
 }
+
+
