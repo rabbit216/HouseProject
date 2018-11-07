@@ -1,36 +1,65 @@
 package com.lwj.house;
 
-public class HouseProject {
+public class HouseInfo {
+
+    //项目名称
     private String projectName;
+    //楼栋
     private String building;
+    //房号
     private String room;
+    //规划用途
     private String planning;
+    //房屋功能
     private String features;
+    //房屋户型
     private String houseType;
+    //所在楼层
     private String floor;
+    //层高
     private String layerHeight;
+    //房屋朝向
     private String oriented;
+    //房屋结构
     private String structure;
+    //是否公建配套
     private String publicBuilding;
+    //是否回迁
     private String relocation;
+    //是否自用
     private String selfuse;
+    //批准销售状态
     private String approvedSales;
+    //商品房销售价目表
     private String houseSalespricelist;
+    //封闭阳台
     private String closedBalcony;
+    //非封闭阳台
     private String noClosedBalcony;
+    //厨房
     private String kitchen;
+    //卫生间
     private String bathroom;
+    //预测总面积
     private String forecastArea;
+    //实测面积
     private String measuredArea;
+    //预测套内面积
     private String predictionInsideArea;
+    //实测套内面积
     private String measuredInsideArea;
+    //预测公摊面积
     private String forecastPoolArea;
+    //实测公摊面积
     private String measuredPoolArea;
+    //是否抵押
     private String mortgage;
+    //是否查封
     private String seal;
+    //温馨提示
     private String tips;
 
-    public HouseProject(String projectname, String building, String room, String planning, String features, String housetype, String floor, String layerheight, String oriented, String structure, String publicBuilding, String relocation, String selfuse, String approvedsales, String housesalespricelist, String closedbalcony, String noClosedbalcony, String kitchen, String bathroom, String forecastarea, String measuredarea, String predictioninsidearea, String measuredinsidearea, String forecastpoolarea, String measuredpoolarea, String mortgage, String seal, String tips) {
+    public HouseInfo(String projectname, String building, String room, String planning, String features, String housetype, String floor, String layerheight, String oriented, String structure, String publicBuilding, String relocation, String selfuse, String approvedsales, String housesalespricelist, String closedbalcony, String noClosedbalcony, String kitchen, String bathroom, String forecastarea, String measuredarea, String predictioninsidearea, String measuredinsidearea, String forecastpoolarea, String measuredpoolarea, String mortgage, String seal, String tips) {
         this.projectName = projectname;
         this.building = building;
         this.room = room;
@@ -61,7 +90,7 @@ public class HouseProject {
         this.tips = tips;
     }
 
-    public HouseProject() {
+    public HouseInfo() {
     }
 
     public String getProjectName() {
@@ -291,7 +320,7 @@ public class HouseProject {
 
     @Override
     public String toString() {
-        return "HouseProject{" +
+        return "HouseInfo{" +
                 "projectName='" + projectName + '\'' +
                 ", Building='" + building + '\'' +
                 ", room='" + room + '\'' +
