@@ -157,6 +157,7 @@ public class HouseSearch {
         return houseInfo;
     }
 
+
     public static Connection getConnection() {
         Connection con = null;  //创建用于连接数据库的Connection对象
         try {
