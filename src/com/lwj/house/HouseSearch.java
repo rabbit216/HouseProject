@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,25 +17,34 @@ import java.util.Iterator;
 
 
 public class HouseSearch {
+    final static String url2_1 = "http://61.142.120.214:9000/web/realestate_presale.jsp?" +
+            "licenceCode=%BB%DD%CD%E5%B7%BF%D4%A4%D0%ED%D7%D6%A1%BE2018%A1%BF%B5%DA166%BA%C5&ProjectCode=DYW00446001";
     final static String url3_1 = "http://61.142.120.214:9000/web/salestable.jsp?buildingcode=DYW0044600101&projectcode=DYW00446001";
-    //   final static String url4_1 = "http://61.142.120.214:9000/web/House.jsp?id=386432&lcStr=0";
     final static String url4Head = "http://61.142.120.214:9000/web/House.jsp?";
+    final static String url3Head = "http://61.142.120.214:9000/web/";
 
     public static void main(String[] args) throws IOException {
-        ArrayList<String> url4List = getUrl4List(url3_1);
-        for (int i = 0; i < url4List.size(); i++) {
-            String url4 = url4List.get(i);
-            Document document = getDocument(url4);
-            HouseInfo houseInfo = changeDoumentToHouse(document);
-            inserHouseInfoToMysql(houseInfo);
+        ArrayList<String> url3List = getUrl3List(url2_1);
+        int conut = 0;
+        for (int i = 0; i < url3List.size(); i++) {
+            String url3 = url3List.get(i);
+            ArrayList<String> url4List = getUrl4List(url3);
+            for (int j = 0; j < url4List.size(); j++) {
+                String url4 = url4List.get(j);
+                Document document4 = getDocument(url4);
+                HouseInfo houseInfo = changeDoumentToHouse(document4);
+                inserHouseInfoToMysql(houseInfo);
+                conut = conut + 1;
+            }
+            System.out.println("此次共获取"+conut+"信息");
         }
     }
 
     /**
      * 传入第三层的链接得到一个第四层链接的集合
      *
-     * @param url3
-     * @return
+     * @param url3 传入的第三层的链接
+     * @return ArrayList<String>
      * @throws IOException
      */
     public static ArrayList<String> getUrl4List(String url3) throws IOException {
@@ -47,17 +57,33 @@ public class HouseSearch {
             String onclick = element.attr("onclick");
             String url = getURL(onclick);
             urlList.add(url);
-            //System.out.println(url);
         }
         return urlList;
+    }
 
+    /**
+     * 通过第二层的链接拿到第三层链接的集合
+     *
+     * @param url2
+     * @return ArrayList<String> 第三层链接集合
+     * @throws IOException
+     */
+    public static ArrayList<String> getUrl3List(String url2) throws IOException {
+        Document doc = Jsoup.parse(new URL(url2).openStream(), "GBK", url2);
+        Elements links = doc.select("a[style=color:#06C;]");
+        ArrayList<String> urlList2 = new ArrayList<>();
+        for (Element link : links) {
+            String linkHref = link.attr("href");
+            urlList2.add(url3Head + linkHref);
+        }
+        return urlList2;
     }
 
     /**
      * 传入一个String对它进行截取和拼接得到一个第四层链接
      *
-     * @param string
-     * @return
+     * @param string 传入的字符串
+     * @return 一个拼接后的链接
      */
     public static String getURL(String string) {
         String first = string.substring(13, 19);
@@ -70,7 +96,7 @@ public class HouseSearch {
     /**
      * 传入一个HouseInfo对象将其插入到数据库
      *
-     * @param houseInfo
+     * @param houseInfo 传入的房子信息对象
      */
     public static void inserHouseInfoToMysql(HouseInfo houseInfo) {
         System.out.println(houseInfo);
@@ -78,10 +104,10 @@ public class HouseSearch {
         String projectName = houseInfo.getProjectName();
         String building = houseInfo.getBuilding();
         String room = houseInfo.getRoom();
-        String price=houseInfo.getHouseSalespricelist();
-        String houseArea=houseInfo.getPredictionInsideArea();
+        String price = houseInfo.getHouseSalespricelist();
+        String houseArea = houseInfo.getPredictionInsideArea();
         String sql = "insert into house_list(projectName,building,room,price,houseArea) values(" + "'" + projectName + "'" + ","
-                + "'" + building + "'" + "," + "'" + room + "'" +","+"'"+price+"'"+ ","+"'"+houseArea+"'"+")";
+                + "'" + building + "'" + "," + "'" + room + "'" + "," + "'" + price + "'" + "," + "'" + houseArea + "'" + ")";
         try {
             System.out.println("sql=" + sql);
             Statement statement = (Statement) conn.createStatement();    // 创建用于执行静态sql语句的Statement对象
@@ -94,10 +120,10 @@ public class HouseSearch {
     }
 
     /**
-     * 访问URL并获取Document
+     * 访问URL并获取Document对象
      *
-     * @param url
-     * @return Document
+     * @param url 传入的第四层链接
+     * @return Document对象
      * @throws IOException
      */
     private static Document getDocument(String url) throws IOException {
@@ -108,8 +134,8 @@ public class HouseSearch {
     /**
      * Document封装成HouseInfo对象
      *
-     * @param document
-     * @return
+     * @param document 第四层的document对象
+     * @return HouseInfo对象
      */
     private static HouseInfo changeDoumentToHouse(Document document) {
         HouseInfo houseInfo = new HouseInfo();
@@ -217,7 +243,7 @@ public class HouseSearch {
     /**
      * 数据库连接
      *
-     * @return
+     * @return Connection数据库连接
      */
     public static Connection getConnection() {
         Connection con = null;  //创建用于连接数据库的Connection对象
