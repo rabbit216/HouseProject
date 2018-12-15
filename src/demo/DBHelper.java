@@ -1,4 +1,4 @@
-package com.lwj.house;
+package demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ public class DBHelper {
                 System.out.println("数据库加载成功!!!");
                 String url = "jdbc:mysql://localhost:3306/testdb";
                 String user = "root";
-                String password = "123";
+                String password = "mysql";
                 conn = DriverManager.getConnection(url, user, password); //建立连接
                 System.out.println("数据库连接成功!!!");
             } catch (ClassNotFoundException | SQLException e) {

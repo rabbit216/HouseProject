@@ -1,4 +1,4 @@
-package mysql;
+package demo;
 
 public class House {
     String id;

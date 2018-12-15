@@ -1,4 +1,4 @@
-package com.lwj.house;
+package demo;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,22 @@ public class Datalist {
     private String projectName;
     //楼栋
     private String building;
+    private  String room;
+
+    public Datalist(String projectName, String building, String room) {
+        this.projectName = projectName;
+        this.building = building;
+        this.room = room;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
     public String getProjectName() {
         return projectName;
     }
@@ -22,17 +38,12 @@ public class Datalist {
     public void setBuilding(String building) {
         this.building = building;
     }
-
-    public Datalist(String projectName, String building) {
-        this.projectName = projectName;
-        this.building = building;
-    }
-
     @Override
     public String toString() {
         return "Datalist{" +
                 "projectName='" + projectName + '\'' +
                 ", building='" + building + '\'' +
+                ", room='" + room + '\'' +
                 '}';
     }
 }

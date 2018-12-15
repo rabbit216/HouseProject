@@ -1,4 +1,4 @@
-package mysql;
+package demo;
 
 import java.sql.*;
 
@@ -25,6 +25,10 @@ public class JdbcAction {
         }
     }
 
+    /**
+     * 数据库连接
+     * @return
+     */
     public static Connection getConnection() {
         Connection con = null;  //创建用于连接数据库的Connection对象
         try {
@@ -40,6 +44,9 @@ public class JdbcAction {
         return con; //返回所建立的数据库连接
     }
 
+    /**
+     * 数据库查找
+     */
     public static void getSelect() {
         try {
             String sql = "select * from house_list";    //要执行的SQL
@@ -59,12 +66,15 @@ public class JdbcAction {
         }
     }
 
+    /**
+     * 向指定数据库插入数据
+     * @param sql sql命令
+     */
     public static void insert(String sql) {
         conn = getConnection(); // 首先要获取连接，即连接到数据库
         try {
             System.out.println("sql=" + sql);
             statement = (Statement) conn.createStatement();    // 创建用于执行静态sql语句的Statement对象
-
             int count = statement.executeUpdate(sql);  // 执行插入操作的sql语句，并返回插入数据的个数
 
             System.out.println("向house_list表中插入 " + count + " 条数据"); //输出插入操作的处理结果
@@ -95,6 +105,10 @@ public class JdbcAction {
         }
     }
 
+    /**
+     * 对指定数据库数据进行删除
+     * @throws SQLException
+     */
     public static void delete() throws SQLException {
         conn = getConnection(); //同样先要获取连接，即连接到数据库
         String sql = "delete from house_list where id=2";//生成一条sql语句
